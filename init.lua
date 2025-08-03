@@ -97,6 +97,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.js', '*.ts', '*.jsx', '*.tsx', '*.json', '*.css', '*.scss', '*.md', '*.html', '*.yaml', '*.yml' },
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
