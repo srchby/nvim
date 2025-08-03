@@ -1,1 +1,1 @@
-pcall(require, 'after.lsp')
+return {}

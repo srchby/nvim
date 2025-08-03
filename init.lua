@@ -50,7 +50,7 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
-vim.o.list = true
+vim.o.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
@@ -310,11 +310,16 @@ require('lazy').setup({
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
       { 'mason-org/mason.nvim', opts = {} },
-      { 'mason-org/mason-lspconfig.nvim', opts = { automatic_enable = {
-        exclude = {
-          'jdtls',
+      {
+        'mason-org/mason-lspconfig.nvim',
+        opts = {
+          automatic_enable = {
+            exclude = {
+              'jdtls',
+            },
+          },
         },
-      } } },
+      },
 
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 

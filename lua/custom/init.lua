@@ -1,0 +1,1 @@
+require 'customs.autocmds.prettier'
