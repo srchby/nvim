@@ -25,14 +25,14 @@ function M:setup()
 
       -- 💀
       '-jar',
-      '/home/srch/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
+      '/home/srch/.local/share/nvim-kick/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar',
       -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
       -- Must point to the                                                     Change this to
       -- eclipse.jdt.ls installation                                           the actual version
 
       -- 💀
       '-configuration',
-      '/home/srch/.local/share/nvim/mason/packages/jdtls/config_linux',
+      '/home/srch/.local/share/nvim-kick/mason/packages/jdtls/config_linux/',
       -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
       -- Must point to the                      Change to one of `linux`, `win` or `mac`
       -- eclipse.jdt.ls installation            Depending on your system.
