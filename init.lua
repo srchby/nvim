@@ -1,3 +1,5 @@
+require 'custom.init'
+
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -114,6 +116,10 @@ rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 
 require('lazy').setup({
+
+  -- srch.
+  { import = 'custom.plugins' },
+
   'NMAC427/guess-indent.nvim',
 
   {
@@ -656,8 +662,6 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns',
-
-  { import = 'custom.plugins' },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
