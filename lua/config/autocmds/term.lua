@@ -5,10 +5,3 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.opt.relativenumber = false
   end,
 })
-
-vim.keymap.set('n', '<space>t', function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd 'J'
-  vim.api.nvim_win_set_height(0, 10)
-end, { desc = 'New Horizontal [T]erm' })
