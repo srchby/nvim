@@ -557,6 +557,9 @@ require('lazy').setup({
     --- @type blink.cmp.Config
     opts = {
       keymap = {
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
         -- <tab>/<s-tab>: move to right/left of your snippet expansion
         -- <c-space>: Open menu or open docs if already open
         -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
