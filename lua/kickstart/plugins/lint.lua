@@ -5,9 +5,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        markdown = { 'vale' },
-      }
+      lint.linters_by_ft = {}
 
       -- However, note that this will enable a set of default linters,
       -- which will cause errors unless these tools are available:

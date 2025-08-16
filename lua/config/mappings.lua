@@ -1,7 +1,7 @@
 -- general
 
-vim.keymap.set({ 'n', 'i' }, '<leader>w', '<ESC>:w<CR>', { desc = '[W]rite to file' })
-vim.keymap.set({ 'n', 'i' }, '<leader>c', '<ESC>:q<CR>', { desc = 'Quit file' })
+vim.keymap.set({ 'n' }, '<leader>w', '<ESC>:w<CR>', { desc = '[W]rite file' })
+vim.keymap.set({ 'n' }, '<leader>c', '<ESC>:q<CR>', { desc = '[Q]uit file' })
 
 -- telescope
 

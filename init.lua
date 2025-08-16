@@ -1,9 +1,10 @@
+local markdown = require 'config.plugins.render-markdown'
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -462,6 +463,8 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
+        'kotlin-language-server',
+        'ktlint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -526,6 +529,8 @@ require('lazy').setup({
         md = { 'prettierd' },
         yaml = { 'prettierd' },
         css = { 'prettierd' },
+        markdown = { 'prettierd' },
+        kotlin = { 'ktlint' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- No need to setup formatters, only put the formatter installed by mason
       },
@@ -625,7 +630,7 @@ require('lazy').setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      require('mini.surround').setup { respect_selection_type = true }
 
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
@@ -648,7 +653,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs',
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'kotlin' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
