@@ -1,4 +1,3 @@
-
 require('lazy').setup({
 
   -- srch.
@@ -348,8 +347,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
-        'kotlin-language-server',
-        'ktlint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -415,7 +412,6 @@ require('lazy').setup({
         yaml = { 'prettierd' },
         css = { 'prettierd' },
         markdown = { 'prettierd' },
-        kotlin = { 'ktlint' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- No need to setup formatters, only put the formatter installed by mason
       },
@@ -585,3 +581,4 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+

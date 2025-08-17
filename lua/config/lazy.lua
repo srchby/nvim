@@ -1,4 +1,3 @@
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -12,3 +11,4 @@ end
 ---@type vim.Option
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
+
