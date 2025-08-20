@@ -342,6 +342,14 @@ require('lazy').setup({
             },
           },
         },
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -550,6 +558,11 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+  {
+    'b0o/schemastore.nvim',
+    lazy = true,
+  },
+
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
@@ -581,4 +594,3 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
