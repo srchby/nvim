@@ -4,6 +4,7 @@ require('lazy').setup({
   require 'config.plugins.colorscheme',
   require 'config.plugins.nvim-jdtls',
   require 'config.plugins.render-markdown',
+  require 'config.plugins.colorizer',
 
   'NMAC427/guess-indent.nvim',
 
@@ -282,9 +283,9 @@ require('lazy').setup({
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
+            map('<leader>ti', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
+            end, '[T]oggle [I]nlay Hints')
           end
         end,
       })
@@ -328,7 +329,6 @@ require('lazy').setup({
 
       local servers = {
         pyright = {},
-
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -350,6 +350,8 @@ require('lazy').setup({
             },
           },
         },
+        lemminx = {},
+        cssls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -420,8 +422,6 @@ require('lazy').setup({
         yaml = { 'prettierd' },
         css = { 'prettierd' },
         markdown = { 'prettierd' },
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- No need to setup formatters, only put the formatter installed by mason
       },
     },
   },

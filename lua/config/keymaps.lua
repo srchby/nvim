@@ -18,14 +18,19 @@ vim.keymap.set({ 'n' }, '<leader>w', '<ESC>:w<CR>', { desc = '[W]rite file' })
 vim.keymap.set({ 'n' }, '<leader>c', '<ESC>:q<CR>', { desc = '[Q]uit file' })
 
 -- Telescope
-vim.keymap.set('n', '<leader>fh', function()
+vim.keymap.set('n', '<leader>si', function()
   require('telescope.builtin').find_files { hidden = true }
-end, { desc = '[H]idden [F]iles' })
+end, { desc = 'H[i]dden [F]iles' })
 
 -- Functions
-vim.keymap.set('n', '<space>te', function()
+vim.keymap.set('n', '<leader>th', function()
   vim.cmd.vnew()
   vim.cmd.term()
   vim.cmd.wincmd 'J'
-  vim.api.nvim_win_set_height(0, 10)
-end, { desc = 'New Horizontal [Te]rm' })
+  vim.api.nvim_win_set_height(0, 15)
+end, { desc = 'New [H]orizontal [T]erm' })
+
+vim.keymap.set('n', '<leader>tv', function()
+  vim.cmd.vsplit()
+  vim.cmd.term()
+end, { desc = 'New [V]ertical [T]erm' })
