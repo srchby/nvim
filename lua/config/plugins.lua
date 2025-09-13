@@ -3,7 +3,7 @@ require('lazy').setup({
   -- srch.
   require 'config.plugins.colorscheme',
   require 'config.plugins.nvim-jdtls',
-  require 'config.plugins.render-markdown',
+  require 'config.plugins.markview',
   require 'config.plugins.colorizer',
 
   'NMAC427/guess-indent.nvim',

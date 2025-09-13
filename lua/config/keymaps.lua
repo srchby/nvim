@@ -18,9 +18,9 @@ vim.keymap.set({ 'n' }, '<leader>w', '<ESC>:w<CR>', { desc = '[W]rite file' })
 vim.keymap.set({ 'n' }, '<leader>c', '<ESC>:q<CR>', { desc = '[Q]uit file' })
 
 -- Telescope
-vim.keymap.set('n', '<leader>si', function()
+vim.keymap.set('n', '<leader>F', function()
   require('telescope.builtin').find_files { hidden = true }
-end, { desc = 'H[i]dden [F]iles' })
+end, { desc = 'Hdden [F]iles' })
 
 -- Functions
 vim.keymap.set('n', '<leader>th', function()
