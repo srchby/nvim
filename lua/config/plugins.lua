@@ -352,6 +352,7 @@ require('lazy').setup({
         },
         lemminx = {},
         cssls = {},
+        texlab = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -422,6 +423,8 @@ require('lazy').setup({
         yaml = { 'prettierd' },
         css = { 'prettierd' },
         markdown = { 'prettierd' },
+        latex = { 'tex-fmt' },
+        tex = { 'tex-fmt' },
       },
     },
   },
