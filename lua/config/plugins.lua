@@ -349,10 +349,17 @@ require('lazy').setup({
             },
           },
         },
-        html = {
-          cmd = { 'vscode-html-language-server', '--stdio' },
+        ast_grep = {
+          cmd = { 'ast-grep', 'lsp' },
           filetypes = { 'html' },
-          settings = {},
+          root_dir = require('lspconfig.util').root_pattern('sgconfig.yaml', 'sgconfig.yml'),
+        },
+        html = {
+          settings = {
+            suggest = {
+              html5 = true,
+            },
+          },
         },
         lemminx = {},
         pyright = {},
