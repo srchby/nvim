@@ -6,6 +6,7 @@ require('lazy').setup({
   require 'config.plugins.markview',
   require 'config.plugins.colorizer',
   require 'config.plugins.markdown-preview',
+  require 'config.plugins.startup',
   'NMAC427/guess-indent.nvim',
 
   {
